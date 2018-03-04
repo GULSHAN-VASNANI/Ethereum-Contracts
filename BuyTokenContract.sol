@@ -1,4 +1,20 @@
-/*Gulshan
+/*
+Contract which has following functions:
+1. buyTokens - if someone calls this method and passes some ETH in the transaction, following checks are done:
+ - check  if the sender is whitelisted. If sender is whitelisted, then the ETH which are transfered are passed on to a TRUSTEE address. If the sender is not whitelisted, then return error - such transaction should fail.
+
+2. getWhitelistStatus - this method takes in an address and returns 0 / 1 depending on whether the address is whitelisted.
+
+3. whitelist - this method takes in an address as an argument. Only one address - opsAddress should be able to call this method successfully. If someone else tries to call this method, it fails.
+On success, this marks the address which was sent in the argument as whitelisted.
+We also need event in whitelist method, with the address which was sent for whitelisting as one parameter.
+
+4. unWhitelist - this method takes in an address as an argument. Only one address - opsAddress should be able to call this method successfully. If someone else tries to call this method, it fails.
+On success, this marks the address which was sent in the argument as un-whitelisted.
+We also need event in unWhitelist method, with the address which was sent for unWhitelisting as one parameter.
+
+Note :- This is tested on remix ide.When calling buyTokens method on remix,put some value on the "vaule" field to transfer the ether to TRUSTEE Address.
+
 */
 pragma solidity ^0.4.19;
 
