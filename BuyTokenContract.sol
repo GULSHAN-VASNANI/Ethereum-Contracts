@@ -1,5 +1,5 @@
 /*
-Contract which has following functions:
+Contract has following functions:
 1. buyTokens - if someone calls this method and passes some ETH in the transaction, following checks are done:
  - check  if the sender is whitelisted. If sender is whitelisted, then the ETH which are transfered are passed on to a TRUSTEE address. If the sender is not whitelisted, then return error - such transaction should fail.
 
